@@ -31,7 +31,7 @@ const skillsData = [
   {
     category: "Backend & Database",
     items: [
-      { name: "Node.js", level: "Intermediate", icon: "🟢" },
+      { name: "Node.js", level: "Beginner", icon: "🟢" },
       { name: "SQL", level: "Intermediate", icon: "🗃️" },
       { name: "FastAPI", level: "Beginner", icon: "⚡" },
     ],
