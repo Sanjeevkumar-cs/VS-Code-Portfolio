@@ -9,10 +9,9 @@ export const projects = [
   },
   {
     title: "VSCode Portfolio",
-    description:
-      "A Visual Studio Code themed developer portfolio built with Next.js and CSS Modules.",
+    description: "git init",
     logo: "/logos/vsc.svg",
-    link: "https://github.com/itsnitinr/vscode-portfolio",
+    link: "https://github.com/Sanjeevkumar-cs/VS-Code-Portfolio.git",
     slug: "vscode-portfolio",
   },
   {

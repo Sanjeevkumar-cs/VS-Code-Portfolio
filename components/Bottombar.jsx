@@ -4,17 +4,17 @@ import {
   VscError,
   VscWarning,
   VscSourceControl,
-} from 'react-icons/vsc';
-import { SiNextdotjs } from 'react-icons/si';
+} from "react-icons/vsc";
+import { SiNextdotjs } from "react-icons/si";
 
-import styles from '@/styles/Bottombar.module.css';
+import styles from "@/styles/Bottombar.module.css";
 
 const Bottombar = () => {
   return (
     <footer className={styles.bottomBar}>
       <div className={styles.container}>
         <a
-          href="https://github.com/itsnitinr/vscode-portfolio"
+          href="https://github.com/Sanjeevkumar-cs/VS-Code-Portfolio.git"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.section}
