@@ -1,0 +1,46 @@
+/* 1. The Main Container (The entire screen) */
+.layout {
+  display: flex;
+  flex-direction: column; /* Stacks Top Section vs Bottom Bar */
+  height: 100vh; /* Forces exactly 100% screen height */
+  width: 100vw;
+  overflow: hidden; /* Prevents the whole browser page from scrolling */
+  background: var(--main-bg);
+}
+
+/* 2. The Top Section (Sidebar + Explorer + Code) */
+.mainBody {
+  display: flex; /* Arranges items in a horizontal row */
+  flex: 1; /* Takes up all height NOT used by bottom bar */
+  overflow: hidden; /* Prevents scrolling here (important!) */
+}
+
+/* 3. The Content Area (Tabs + Code) */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Takes remaining width after Sidebars */
+  height: 100%;
+  min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* 4. The Scrollable Code Area */
+.codeArea {
+  flex: 1; /* Fills remaining height under Tabs */
+  overflow-y: auto; /* ENABLE SCROLL HERE ONLY */
+  overflow-x: hidden;
+  position: relative;
+  /* --- ADD THIS LINE FOR THE GLOBAL MARGIN --- */
+  padding: 0 2rem; /* Adds space on Left and Right */
+}
+
+/* Scrollbar styling to match VS Code */
+.codeArea::-webkit-scrollbar {
+  width: 10px;
+}
+.codeArea::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg);
+}
+.codeArea::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+}

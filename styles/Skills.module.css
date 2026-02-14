@@ -1,0 +1,120 @@
+/* styles/Skills.module.css */
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  /* Adapts to Global Theme */
+  color: var(--text-color);
+}
+
+/* --- Left Side: Text Zone --- */
+.textZone {
+  width: 40%;
+  padding: 0 0 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-size: 4rem;
+  font-family: "Fira Code", monospace;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.highlight {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 90%;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* --- Right Side: Scrollable Wrapper --- */
+.skillsContainer {
+  width: 55%;
+  height: 80%;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* Scrollbar Styling */
+.skillsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+.skillsContainer::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0.1);
+  border-radius: 4px;
+}
+.skillsContainer::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+/* --- Layout Animations --- */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Responsive Layout --- */
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+    padding: 6rem 1rem 2rem 1rem;
+  }
+  .textZone {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .skillsContainer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    padding: 0;
+  }
+}

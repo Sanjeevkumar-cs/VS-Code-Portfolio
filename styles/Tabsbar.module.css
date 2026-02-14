@@ -1,0 +1,59 @@
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  background-color: var(--tabs-bg); /* Uses theme color */
+  height: 35px;
+  width: 100%;
+  border-bottom: 1px solid var(--tabs-border); /* Uses theme color */
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-color) !important; /* Uses theme text color */
+  background-color: var(--tabs-bg);
+  border-right: 1px solid var(--tabs-border);
+  min-width: fit-content;
+  font-size: 14px;
+}
+
+.tab:hover {
+  background-color: var(--tabs-hover-bg); /* Uses theme hover */
+  color: var(--text-color) !important;
+}
+
+.tab.active {
+  background-color: var(--main-bg); /* Blends with main content */
+  border-top: 1px solid var(--accent-color); /* Uses theme accent */
+  color: var(--text-color) !important;
+}
+
+/* ... icon styles ... */
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.icon {
+  display: block;
+  /* Ensures icon inherits the white/theme text color */
+  color: inherit;
+}
+
+@media screen and (max-width: 900px) {
+  .tabs {
+    width: 78vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabs {
+    width: 89.5vw;
+  }
+}

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap");
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: var(--text-color);
+  text-align: center; /* Centers all text */
+}
+
+/* BIG Title Style */
+.title {
+  font-family: "Fira Code", monospace; /* Coding font style */
+  font-size: 4rem; /* Much bigger (was 2.5rem) */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  text-transform: uppercase; /* Makes it look like a header */
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: "Fira Code", monospace;
+  font-size: 1.5rem; /* Increased from 1.1rem */
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  font-weight: 300;
+}
+
+/* Section Headers */
+.sectionTitle {
+  font-size: 2rem; /* Increased from 1.3rem */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Paragraph Text */
+.paragraph {
+  font-size: 1.25rem; /* Increased from 1rem */
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  max-width: 800px; /* Keeps lines from getting too long to read */
+  margin-left: auto; /* Centers the block */
+  margin-right: auto;
+}
+
+/* Highlighted words */
+.highlight {
+  color: var(--accent-color);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.05); /* Subtle background for emphasis */
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+/* NEW: Glass Card Container for the Text */
+.aboutCard {
+  background: rgba(255, 255, 255, 0.03); /* Very subtle transparent white */
+  backdrop-filter: blur(10px); /* The blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  border-radius: 16px;
+  padding: 3rem;
+  margin-top: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Soft shadow */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutCard::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 0 auto 2rem auto;
+  border-radius: 2px;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: left; /* Easier to read inside a card */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  .paragraph {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,143 @@
+/* Add these to About.module.css if missing */
+
+.aboutCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  width: 90%; /* Responsive width */
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.stageCubeCont {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -6rem;
+  /* Adds a glow behind the entire cube to make it pop */
+  filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.5));
+}
+
+/* Optional: A floor shadow to ground the cube */
+.stageCubeCont::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  width: 200px;
+  height: 20px;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), transparent);
+  border-radius: 50%;
+  transform: scaleY(0.4);
+}
+
+.cubeSpinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0; /* Updated for 200px size */
+  margin-left: 0;
+}
+
+.cubeSpinner div {
+  position: absolute;
+  width: 200px; /* Increased size slightly for impact */
+  height: 200px;
+
+  /* HOLOGRAPHIC STYLE CHANGE */
+  border: 1px solid var(--accent-color); /* Neon Border */
+  background-color: rgba(17, 24, 39, 0.85); /* Dark Glass instead of White */
+  box-shadow: 0 0 15px var(--accent-color); /* Glow matches theme */
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Image adjustments */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+/* --- Faces with Images --- */
+/* Depth is 100px (Half of 200px width) */
+
+.face1 {
+  transform: translateZ(100px);
+  background-image: url("/logos/react_icon.svg");
+}
+.face2 {
+  transform: rotateY(90deg) translateZ(100px);
+  background-image: url("/logos/html_icon.svg");
+}
+.face3 {
+  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+  background-image: url("/logos/css_icon.svg");
+}
+.face4 {
+  transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+  background-image: url("/logos/icons8-python.svg");
+}
+.face5 {
+  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+  background-image: url("/logos/json_icon.svg");
+}
+.face6 {
+  transform: rotateX(-90deg) translateZ(100px);
+  background-image: url("/logos/markdown_icon.svg");
+}
+
+/* Animation Keyframes */
+@keyframes spincube {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: rotateY(-90deg);
+  }
+  33% {
+    transform: rotateY(-90deg) rotateZ(90deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+  66% {
+    transform: rotateY(-270deg) rotateX(90deg);
+  }
+  83% {
+    transform: rotateX(90deg);
+  }
+}
