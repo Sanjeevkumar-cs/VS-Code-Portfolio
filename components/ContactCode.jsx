@@ -8,6 +8,12 @@ const contactItems = [
     href: "mailto:sanjeevkumar2062cs@gmail.com?subject=Portfolio%20Inquiry",
   },
   {
+    social: "website",
+    link: "https://vs-code-portfolio-green.vercel.app/",
+    // Adds a pre-filled subject line
+    href: "https://vs-code-portfolio-green.vercel.app/",
+  },
+  {
     social: "github",
     link: "Sanjeevkumar-cs",
     href: "https://github.com/Sanjeevkumar-cs",
