@@ -1,0 +1,84 @@
+/* ================= 3D CUBE STYLES ================= */
+.stageCubeCont {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.4));
+  height: 100%; /* Ensures it fills its parent */
+}
+
+.cubeSpinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0;
+  margin-left: -100px;
+}
+
+.cubeSpinner div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--main-bg);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  opacity: 0.9;
+}
+
+/* Faces */
+.face1 {
+  transform: translateZ(100px);
+  background-image: url("/logos/react_icon.svg");
+}
+.face2 {
+  transform: rotateY(90deg) translateZ(100px);
+  background-image: url("/logos/html_icon.svg");
+}
+.face3 {
+  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+  background-image: url("/logos/css_icon.svg");
+}
+.face4 {
+  transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+  background-image: url("/logos/icons8-python.svg");
+}
+.face5 {
+  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+  background-image: url("/logos/json_icon.svg");
+}
+.face6 {
+  transform: rotateX(-90deg) translateZ(100px);
+  background-image: url("/logos/markdown_icon.svg");
+}
+
+@keyframes spincube {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: rotateY(-90deg);
+  }
+  33% {
+    transform: rotateY(-90deg) rotateZ(90deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+  66% {
+    transform: rotateY(-270deg) rotateX(90deg);
+  }
+  83% {
+    transform: rotateX(90deg);
+  }
+}

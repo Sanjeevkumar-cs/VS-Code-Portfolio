@@ -8,6 +8,7 @@ import {
   VscCode,
   VscFiles,
   VscEdit,
+  VscBook,
 } from "react-icons/vsc";
 
 import styles from "@/styles/Sidebar.module.css";
@@ -16,6 +17,7 @@ const sidebarTopItems = [
   { Icon: VscFiles, path: "/" },
   { Icon: VscCode, path: "/projects" },
   { Icon: VscEdit, path: "/skills" }, // Ensure this matches your component registry key
+  { Icon: VscBook, path: "/resume" },
   { Icon: VscMail, path: "/contact" },
 ];
 

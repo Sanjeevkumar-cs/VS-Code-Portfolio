@@ -32,6 +32,11 @@ const explorerItems = [
     path: "/skills",
     icon: "/logos/json_icon.svg",
   },
+  {
+    name: "resume.jsx",
+    path: "/resume",
+    icon: "/logos/js_icon.svg",
+  },
 ];
 
 const Explorer = () => {

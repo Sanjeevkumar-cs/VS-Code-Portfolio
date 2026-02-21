@@ -1,143 +1,131 @@
-/* Add these to About.module.css if missing */
-
-.aboutCard {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  max-width: 900px;
-  width: 90%; /* Responsive width */
-  margin-top: 4rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--accent-color);
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.paragraph {
-  font-size: 1.1rem;
-  line-height: 1.8;
+/* Container: Full height, split layout, NO SCROLLING */
+.container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 35px);
+  background-color: var(--main-bg);
   color: var(--text-color);
-  margin-bottom: 1.5rem;
+  font-family: "Consolas", "Courier New", monospace;
+  overflow: hidden;
 }
 
+/* ================= LEFT PANE (CODE) ================= */
+.editorPane {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.lineNumbers {
+  width: 50px;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 20px;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  user-select: none;
+  border-right: 1px solid var(--explorer-border);
+  line-height: 1.6;
+}
+
+.lineNumbers span {
+  display: block;
+}
+
+.codeArea {
+  flex: 1;
+  padding: 20px 30px;
+  line-height: 1.6;
+}
+
+/* Indentation */
+.line {
+  display: block;
+}
+.indent {
+  display: block;
+  padding-left: 2rem;
+}
+.doubleIndent {
+  display: block;
+  padding-left: 4rem;
+}
+.tripleIndent {
+  display: block;
+  padding-left: 6rem;
+}
+
+/* Syntax Highlighting */
+.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+.tag {
+  color: #569cd6;
+}
+.text {
+  color: var(--text-color);
+}
 .highlight {
   color: var(--accent-color);
-  font-weight: 600;
+  font-weight: bold;
 }
-.stageCubeCont {
-  width: 300px;
-  height: 300px;
+
+/* ================= RIGHT PANE (PREVIEW) ================= */
+.previewPane {
+  width: 40%;
+  border-left: 1px solid var(--explorer-border);
+  background-color: var(--article-bg);
+  display: flex;
+  flex-direction: column;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -6rem;
-  /* Adds a glow behind the entire cube to make it pop */
-  filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.5));
+  overflow: hidden;
 }
 
-/* Optional: A floor shadow to ground the cube */
-.stageCubeCont::after {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  width: 200px;
-  height: 20px;
-  background: radial-gradient(rgba(0, 0, 0, 0.5), transparent);
-  border-radius: 50%;
-  transform: scaleY(0.4);
+.previewHeader {
+  width: 100%;
+  padding: 10px 15px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--explorer-border);
+  background-color: var(--main-bg);
 }
 
-.cubeSpinner {
-  animation-name: spincube;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 12s;
-  transform-style: preserve-3d;
-  transform-origin: 100px 100px 0; /* Updated for 200px size */
-  margin-left: 0;
-}
-
-.cubeSpinner div {
-  position: absolute;
-  width: 200px; /* Increased size slightly for impact */
-  height: 200px;
-
-  /* HOLOGRAPHIC STYLE CHANGE */
-  border: 1px solid var(--accent-color); /* Neon Border */
-  background-color: rgba(17, 24, 39, 0.85); /* Dark Glass instead of White */
-  box-shadow: 0 0 15px var(--accent-color); /* Glow matches theme */
-
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Image adjustments */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 50%;
-}
-
-/* --- Faces with Images --- */
-/* Depth is 100px (Half of 200px width) */
-
-.face1 {
-  transform: translateZ(100px);
-  background-image: url("/logos/react_icon.svg");
-}
-.face2 {
-  transform: rotateY(90deg) translateZ(100px);
-  background-image: url("/logos/html_icon.svg");
-}
-.face3 {
-  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-  background-image: url("/logos/css_icon.svg");
-}
-.face4 {
-  transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-  background-image: url("/logos/icons8-python.svg");
-}
-.face5 {
-  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
-  background-image: url("/logos/json_icon.svg");
-}
-.face6 {
-  transform: rotateX(-90deg) translateZ(100px);
-  background-image: url("/logos/markdown_icon.svg");
-}
-
-/* Animation Keyframes */
-@keyframes spincube {
-  from,
-  to {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+/* ================= MOBILE RESPONSIVE ================= */
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    overflow-y: auto;
   }
-  16% {
-    transform: rotateY(-90deg);
+
+  .editorPane {
+    overflow: visible;
   }
-  33% {
-    transform: rotateY(-90deg) rotateZ(90deg);
+
+  .previewPane {
+    width: 100%;
+    height: 400px;
+    border-left: none;
+    border-top: 1px solid var(--explorer-border);
   }
-  50% {
-    transform: rotateY(-180deg) rotateZ(90deg);
+
+  .lineNumbers {
+    display: none;
   }
-  66% {
-    transform: rotateY(-270deg) rotateX(90deg);
+  .codeArea {
+    padding: 15px;
   }
-  83% {
-    transform: rotateX(90deg);
+  .indent {
+    padding-left: 1rem;
+  }
+  .doubleIndent {
+    padding-left: 2rem;
+  }
+  .tripleIndent {
+    padding-left: 3rem;
   }
 }

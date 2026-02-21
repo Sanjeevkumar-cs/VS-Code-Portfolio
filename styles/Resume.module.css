@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 35px); /* No Scroll */
+  background-color: var(--main-bg);
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 1.1rem;
+  overflow: hidden;
+  color: var(--text-color);
+}
+
+.lineNumbers {
+  width: 50px;
+  text-align: right;
+  padding-right: 15px;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  user-select: none;
+  border-right: 1px solid var(--explorer-border);
+  line-height: 1.6;
+  padding-top: 20px;
+}
+
+.lineNumbers span {
+  display: block;
+}
+
+.codeArea {
+  flex: 1;
+  padding: 20px 30px;
+  line-height: 1.6;
+}
+
+/* Indentation Helpers */
+.line {
+  display: block;
+}
+.indent {
+  display: block;
+  padding-left: 2rem;
+}
+.doubleIndent {
+  display: block;
+  padding-left: 4rem;
+}
+
+/* Syntax Colors */
+.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+.keyword {
+  color: #569cd6;
+}
+.variable {
+  color: #9cdcfe;
+}
+.operator {
+  color: #d4d4d4;
+}
+.bracket {
+  color: #ffd700;
+}
+.key {
+  color: var(--text-color);
+}
+.string {
+  color: #ce9178;
+}
+.function {
+  color: #c586c0;
+}
+.functionName {
+  color: #dcdcaa;
+}
+.tag {
+  color: #808080;
+}
+
+/* ================= BUTTON STYLES ================= */
+
+/* Container to align buttons with indentation */
+.buttonContainer {
+  display: flex;
+  gap: 15px;
+  padding-left: 6rem; /* Matches triple indent */
+  margin: 10px 0;
+}
+
+/* Base Button Style */
+.button {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  font-family:
+    "Source Sans Pro", sans-serif; /* Use UI font for buttons, not code font */
+}
+
+/* Primary Button (Filled with Accent Color) */
+.primaryButton {
+  background-color: var(--accent-color);
+  color: var(--main-bg); /* Dark text on bright button */
+  border: 1px solid var(--accent-color);
+}
+
+.primaryButton:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Secondary Button (Outline) */
+.secondaryButton {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.secondaryButton:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
+  .lineNumbers {
+    display: none;
+  }
+  .codeArea {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+  .indent {
+    padding-left: 1rem;
+  }
+  .doubleIndent {
+    padding-left: 2rem;
+  }
+  .buttonContainer {
+    padding-left: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
