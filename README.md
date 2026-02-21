@@ -1,7 +1,6 @@
 # VS Code Portfolio
 
 A sleek, high-performance developer portfolio built with **Next.js 16 (App Router)**. It features a modern dark-themed design with glassmorphism effects.
-![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Preview)
 
 ## ✨ Features
 
